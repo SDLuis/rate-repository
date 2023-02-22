@@ -19,6 +19,15 @@
     "rules": {
         "react/react-in-jsx-scope": "off",
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "no-use-before-define": ["error", { "variables": false }]
+        "no-use-before-define": ["error", { "variables": false }],
+        "linebreak-style": 0,
+        "react/self-closing-comp": "off",
+        "react/jsx-closing-tag-location": "off",
+        "semi": "off",
+        "react/prop-types": "off",
+        "react/destructuring-assignment": "off",
+        "react/jsx-one-expression-per-line": "off",
+        "react/jsx-props-no-spreading": "off"
+        
     }
 }
