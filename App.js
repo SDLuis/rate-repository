@@ -1,18 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
+import Constants from 'expo-constants';
+import Main from './src/components/Main';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>There we go!!</Text>
+    <View style={{ marginTop: Constants.statusBarHeight, flexGrow: 1 }}>
+      <Main />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
