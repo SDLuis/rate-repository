@@ -1,15 +1,16 @@
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import StyledText from './StyledText';
 
 export default function RepositoryItem(props) {
   return (
     <View style={{ padding: 10 }} key={props.id}>
-      <Text>FullName: {props.fullName}</Text>
-      <Text>Description: {props.description}</Text>
-      <Text>Language: {props.language}</Text>
-      <Text>Stars: {props.stargazersCount}</Text>
-      <Text>Forks: {props.forksCount}</Text>
-      <Text>Review Count: {props.reviewCount}</Text>
-      <Text>Rating Average: {props.ratingAverage}</Text>
+      <StyledText blue bold>FullName: {props.fullName}</StyledText>
+      <StyledText bold>Description: {props.description}</StyledText>
+      <StyledText bold>Language: {props.language}</StyledText>
+      <StyledText>Stars: {props.stargazersCount}</StyledText>
+      <StyledText>Forks: {props.forksCount}</StyledText>
+      <StyledText>Review Count: {props.reviewCount}</StyledText>
+      <StyledText>Rating Average: {props.ratingAverage}</StyledText>
     </View>
   );
 }
