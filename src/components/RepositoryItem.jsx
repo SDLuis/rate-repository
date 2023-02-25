@@ -7,7 +7,7 @@ function RepositoryItemHeader({ fullName, description, language, ownerAvatarUrl 
   return (
     <View style={{ flexDirection: 'row', paddingBottom: 10 }}>
       <View style={{ paddingRight: 10 }}>
-        <Image style={Style.image} source={ownerAvatarUrl} />
+        <Image style={Style.image} source={{ uri: ownerAvatarUrl }} />
       </View>
       <View style={{ flex: 1, gap: 4 }}>
         <StyledText fontWeight="bold" color="blue">{fullName}</StyledText>
@@ -28,9 +28,7 @@ export default function RepositoryItem(props) {
 
 const Style = StyleSheet.create({
   container: {
-    padding: 20,
-    paddingBottom: 5,
-    paddingTop: 5,
+    padding: 14,
   },
   language: {
     padding: 4,
