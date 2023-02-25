@@ -1,16 +1,48 @@
-import { View } from 'react-native';
+import { View, StyleSheet, Image } from 'react-native';
+import RepositoryStacks from './RepositoryStacks';
+import theme from '../theme';
 import StyledText from './StyledText';
 
+function RepositoryItemHeader({ fullName, description, language, ownerAvatarUrl }) {
+  return (
+    <View style={{ flexDirection: 'row', paddingBottom: 10 }}>
+      <View style={{ paddingRight: 10 }}>
+        <Image style={Style.image} source={ownerAvatarUrl} />
+      </View>
+      <View style={{ flex: 1, gap: 4 }}>
+        <StyledText fontWeight="bold" color="blue">{fullName}</StyledText>
+        <StyledText>{description}</StyledText>
+        <StyledText style={Style.language}>{language}</StyledText>
+      </View>
+    </View>
+  )
+}
 export default function RepositoryItem(props) {
   return (
-    <View style={{ padding: 10 }} key={props.id}>
-      <StyledText blue bold>FullName: {props.fullName}</StyledText>
-      <StyledText bold>Description: {props.description}</StyledText>
-      <StyledText bold>Language: {props.language}</StyledText>
-      <StyledText>Stars: {props.stargazersCount}</StyledText>
-      <StyledText>Forks: {props.forksCount}</StyledText>
-      <StyledText>Review Count: {props.reviewCount}</StyledText>
-      <StyledText>Rating Average: {props.ratingAverage}</StyledText>
+    <View key={props.id} style={Style.container}>
+      <RepositoryItemHeader {...props} />
+      <RepositoryStacks {...props} />
     </View>
   );
 }
+
+const Style = StyleSheet.create({
+  container: {
+    padding: 20,
+    paddingBottom: 5,
+    paddingTop: 5,
+  },
+  language: {
+    padding: 4,
+    alignSelf: 'flex-start',
+    color: theme.colors.white,
+    backgroundColor: theme.colors.textSecondary,
+    borderRadius: 4,
+    overflow: 'hidden',
+  },
+  image: {
+    width: 48,
+    height: 48,
+    borderRadius: 4,
+  },
+});

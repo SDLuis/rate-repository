@@ -17,15 +17,19 @@ const styles = StyleSheet.create({
   small: {
     fontSize: theme.fontSizes.body,
   },
+  textAlignCenter: {
+    textAlign: theme.alignText.center,
+  },
 });
-
-export default function StyledText({ blue, small, big, bold, children }) {
+export default function StyledText({ align, color, fontSize, fontWeight, children, style }) {
   const textStyles = [
     styles.text,
-    blue && styles.blue,
-    small && styles.small,
-    big && styles.big,
-    bold && styles.bold,
+    align === 'center' && styles.textAlignCenter,
+    color === 'blue' && styles.blue,
+    fontSize === 'small' && styles.small,
+    fontSize === 'big' && styles.big,
+    fontWeight === 'bold' && styles.bold,
+    style,
   ];
 
   return <Text style={textStyles}>{children}</Text>;

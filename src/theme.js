@@ -6,7 +6,7 @@ const theme = {
   },
   colors: {
     textPrimary: '#24292e',
-    textSecondary: '#586069',
+    textSecondary: '#09f',
     primary: '#0366d6',
     white: '#fefefe',
   },
@@ -20,6 +20,9 @@ const theme = {
   fontWeights: {
     normal: '400',
     bold: '700',
+  },
+  alignText: {
+    center: 'center',
   },
 };
 
